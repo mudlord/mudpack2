@@ -141,10 +141,10 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="backend\lzma\lzma_depacker_x86.asm">
+    <MASM Include="backend\fr_pack\fr_depacker_x86.asm">
       <Filter>backend_x86</Filter>
     </MASM>
-    <MASM Include="backend\fr_pack\fr_depacker_x86.asm">
+    <MASM Include="backend\lzma\lzma_depacker_x86.asm">
       <Filter>backend_x86</Filter>
     </MASM>
   </ItemGroup>

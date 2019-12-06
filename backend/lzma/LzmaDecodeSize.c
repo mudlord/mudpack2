@@ -9,7 +9,7 @@
 
 typedef struct _CRangeDecoder
 {
-  const Byte *Buffer;
+  const BYTE *Buffer;
   UInt32 Range;
   UInt32 Code;
 } CRangeDecoder;

@@ -37,7 +37,7 @@
 
 /* #define _LZMA_SYSTEM_SIZE_T */
 /* Use system's size_t. You can use it to enable 64-bit sizes supporting*/
-
+#include "Types.h"
 #ifndef UInt32
 #ifdef _LZMA_UINT32_IS_ULONG
 #define UInt32 unsigned long
@@ -86,46 +86,8 @@ typedef struct _CLzmaProperties
   #endif
 }CLzmaProperties;
 
-int LzmaDecodeProperties(CLzmaProperties *propsRes, const unsigned char *propsData, int size);
-
-#define LzmaGetNumProbs(Properties) (LZMA_BASE_SIZE + (LZMA_LIT_SIZE << ((Properties)->lc + (Properties)->lp)))
-
 #define kLzmaNeedInitId (-2)
 
-typedef struct _CLzmaDecoderState
-{
-  CLzmaProperties Properties;
-  CProb *Probs;
-
-  #ifdef _LZMA_IN_CB
-  const unsigned char *Buffer;
-  const unsigned char *BufferLim;
-  #endif
-
-  #ifdef _LZMA_OUT_READ
-  unsigned char *Dictionary;
-  UInt32 Range;
-  UInt32 Code;
-  UInt32 DictionaryPos;
-  UInt32 GlobalPos;
-  UInt32 DistanceLimit;
-  UInt32 Reps[4];
-  int State;
-  int RemainLen;
-  unsigned char TempDictionary[4];
-  #endif
-} CLzmaDecoderState;
-
-#ifdef _LZMA_OUT_READ
-#define LzmaDecoderInit(vs) { (vs)->RemainLen = kLzmaNeedInitId; }
-#endif
-
-int LzmaDecode(CLzmaDecoderState *vs,
-    #ifdef _LZMA_IN_CB
-    ILzmaInCallback *inCallback,
-    #else
-    const unsigned char *inStream, SizeT inSize, SizeT *inSizeProcessed,
-    #endif
-    unsigned char *outStream, SizeT outSize, SizeT *outSizeProcessed);
+void LzmaDecode(UInt16* workmem,const unsigned char *inStream, SizeT inSize, SizeT *inSizeProcessed,unsigned char *outStream, SizeT outSize, SizeT *outSizeProcessed);
 
 #endif
