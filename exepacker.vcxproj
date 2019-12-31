@@ -158,7 +158,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <LibraryPath>$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\codecrack\wtl\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(IncludePath);$(ProjectDir)wtl</IncludePath>
     <OutDir>$(SolutionDir)/out</OutDir>
     <TargetName>exe_packer</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
