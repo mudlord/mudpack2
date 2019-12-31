@@ -4,6 +4,8 @@
 
 **Do not expect any support/help. Pull requests will be dismissed.**
 
+[![Build status](https://ci.appveyor.com/api/projects/status/4wf718wpxuwxg2d2?svg=true)](https://ci.appveyor.com/project/mudlord/mupack)
+
 
 This is a small executable packer that I have been working on and off for some time. 
 There is some bugs:
