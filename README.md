@@ -14,7 +14,7 @@ Most obvious known bugs:
 * Incompatibility with shared.dll of foobar2000.
 * No load config directory support.
 
-mupack3 is developed in private and is designed to fix these issues and *many* others, so don't expect a public release at all.
+mupak is developed in private and is designed to fix these issues and *many* others, so don't expect a public release at all.
 Virus scanners now scan for mupack2, making it somewhat useless now (thanks to people that abused it). 
 Which is why hence a private version for me exists, to pack my own prods.
 
